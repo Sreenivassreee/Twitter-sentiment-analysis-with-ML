@@ -11,19 +11,51 @@ import SwifteriOS
 
 class ViewController: UIViewController {
     
-    let swifter = Swifter(consumerKey: "_your_key_here", consumerSecret: "_your_secret_here_")
-    
+    let swifter = Swifter(consumerKey: "user key", consumerSecret: "your key")
+    let sentimentClassifier = TweetClassifier()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        swifter.searchTweet(using: "@Apple", lang: "en", count: 100, tweetMode: .extended, success: { (results, metadata) in
+            print(results)
+        
+        }){(e) in
+            print(e)
+        }
 
     }
-
+    @IBAction func PredictBtn(_ sender: Any) {
+    }
+    
     @IBOutlet weak var emoji: UILabel!
     
    
-    @IBOutlet weak var prediction: UILabel!
-    @IBAction func enterField(_ sender: UITextField) {
+
+    @IBOutlet weak var text: UITextField!
+    
+    func fetchTweets() {
+        
+        if let searchText = text.text {
+            
+            swifter.searchTweet(using: searchText, lang: "en", count: 100, tweetMode: .extended, success: { (results, metadata) in
+                
+                var tweets = [TweetClassifierInput]()
+                
+                for i in 0..<100 {
+                    if let tweet = results[i]["full_text"].string {
+                        let tweetForClassification = TweetClassifierInput(text: tweet)
+                        tweets.append(tweetForClassification)
+                    }
+                }
+                
+//                self.makePrediction(with: tweets)
+                
+            }) { (error) in
+                print("There was an error with the Twitter API Request, \(error)")
+            }
+        }
         
     }
+   
 }
 

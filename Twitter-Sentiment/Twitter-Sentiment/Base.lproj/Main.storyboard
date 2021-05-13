@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,35 +33,35 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enterField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="q6x-Dx-YCm"/>
-                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREDICTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9e-OR-Iwd">
-                                <rect key="frame" x="0.0" y="808" width="414" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfh-Nz-e6W">
+                                <rect key="frame" x="0.0" y="782" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ftc-uC-Wlx"/>
+                                </constraints>
+                                <state key="normal" title="Predict"/>
+                                <connections>
+                                    <action selector="PredictBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dhF-1V-Ukd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fRc-dn-ahu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KUw-Xt-JwQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fRc-dn-ahu" secondAttribute="bottom" constant="147" id="Kot-Dt-U81"/>
                             <constraint firstItem="nIH-tt-HNo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="207" id="LIm-Q7-rht"/>
-                            <constraint firstItem="v9e-OR-Iwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MuY-O9-paz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nIH-tt-HNo" secondAttribute="trailing" constant="11" id="ZHX-uA-xKx"/>
                             <constraint firstItem="nIH-tt-HNo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="a3U-fH-ZFq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cfh-Nz-e6W" secondAttribute="trailing" id="bwm-DL-bDg"/>
                             <constraint firstItem="fRc-dn-ahu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dhX-e9-Xhu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v9e-OR-Iwd" secondAttribute="trailing" id="nHN-sF-UhB"/>
-                            <constraint firstItem="v9e-OR-Iwd" firstAttribute="top" secondItem="fRc-dn-ahu" secondAttribute="bottom" constant="93" id="ra5-Se-BsG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v9e-OR-Iwd" secondAttribute="bottom" constant="20" id="yxg-EF-ilZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cfh-Nz-e6W" secondAttribute="bottom" constant="30" id="jWm-Nz-ES2"/>
+                            <constraint firstItem="Cfh-Nz-e6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l5T-5D-6pX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emoji" destination="nIH-tt-HNo" id="2l0-Yt-ZIz"/>
-                        <outlet property="prediction" destination="v9e-OR-Iwd" id="wac-lL-vMZ"/>
+                        <outlet property="text" destination="fRc-dn-ahu" id="hae-V6-MjT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -70,9 +69,4 @@
             <point key="canvasLocation" x="69.565217391304358" y="116.51785714285714"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
