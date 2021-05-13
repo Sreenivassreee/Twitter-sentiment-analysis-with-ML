@@ -8,7 +8,6 @@ let evaluationMatrics = sentClassifier.evaluation(on: testingData, textColumn: "
 let accuracy=(1.0 - evaluationMatrics.classificationError)*100
 let metadeta=MLModelMetadata(author: "Sreenivas", shortDescription: "This is tained sentimates", version: "1.0")
 try sentClassifier.write(to: URL(fileURLWithPath: "/Users/sreenivask/Documents/WorkSpace/IOS/twitter/TweetClassifier.mlmodel"))
-    
 try sentClassifier.prediction(from:"@apple is waste company")
 try sentClassifier.prediction(from: "@apple is love")
 }catch{
