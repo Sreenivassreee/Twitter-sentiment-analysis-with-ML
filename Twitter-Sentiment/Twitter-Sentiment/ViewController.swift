@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import CoreML
+import SwifteriOS
 
 class ViewController: UIViewController {
-
+    
+    let swifter = Swifter(consumerKey: "_your_key_here", consumerSecret: "_your_secret_here_")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
     @IBOutlet weak var emoji: UILabel!
