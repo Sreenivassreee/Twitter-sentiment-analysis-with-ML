@@ -48,7 +48,7 @@ class ViewController: UIViewController {
                     }
                 }
                 
-//                self.makePrediction(with: tweets)
+                self.makePrediction(with: tweets)
                 
             }) { (error) in
                 print("There was an error with the Twitter API Request, \(error)")
@@ -56,6 +56,32 @@ class ViewController: UIViewController {
         }
         
     }
-   
+    func makePrediction(with tweets: [TweetClassifierInput]) {
+        
+        do {
+            
+            let predictions = try self.sentimentClassifier.predictions(inputs: tweets)
+            
+            var sentimentScore = 0
+            
+            for pred in predictions {
+                let sentiment = pred.label
+                
+                if sentiment == "Pos" {
+                    sentimentScore += 1
+                } else if sentiment == "Neg" {
+                    sentimentScore -= 1
+                }
+            }
+            
+//            updateUI(with: sentimentScore)
+            
+        } catch {
+            print("There was an error with making a prediction, \(error)")
+        }
+        
+    }
+    
+
 }
 
