@@ -13,6 +13,7 @@
 		F4E9256D264D83D700E16CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E9256B264D83D700E16CE2 /* Main.storyboard */; };
 		F4E9256F264D83DB00E16CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E9256E264D83DB00E16CE2 /* Assets.xcassets */; };
 		F4E92572264D83DB00E16CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E92570264D83DB00E16CE2 /* LaunchScreen.storyboard */; };
+		F4E9257C264D9C3900E16CE2 /* TweetClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F4E9257B264D9C3800E16CE2 /* TweetClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F4E9256E264D83DB00E16CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E92571264D83DB00E16CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4E92573264D83DB00E16CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E9257B264D9C3800E16CE2 /* TweetClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TweetClassifier.mlmodel; path = ../../TweetClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				F4E9256B264D83D700E16CE2 /* Main.storyboard */,
 				F4E9256E264D83DB00E16CE2 /* Assets.xcassets */,
 				F4E92570264D83DB00E16CE2 /* LaunchScreen.storyboard */,
+				F4E9257B264D9C3800E16CE2 /* TweetClassifier.mlmodel */,
 				F4E92573264D83DB00E16CE2 /* Info.plist */,
 			);
 			path = "Twitter-Sentiment";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E9256A264D83D700E16CE2 /* ViewController.swift in Sources */,
+				F4E9257C264D9C3900E16CE2 /* TweetClassifier.mlmodel in Sources */,
 				F4E92566264D83D700E16CE2 /* AppDelegate.swift in Sources */,
 				F4E92568264D83D700E16CE2 /* SceneDelegate.swift in Sources */,
 			);
