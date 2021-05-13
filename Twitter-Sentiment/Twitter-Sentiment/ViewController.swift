@@ -9,6 +9,7 @@ import UIKit
 import CoreML
 import SwifteriOS
 
+
 class ViewController: UIViewController {
     
     let swifter = Swifter(consumerKey: "user key", consumerSecret: "your key")
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
                 }
             }
             
-//            updateUI(with: sentimentScore)
+            updateUI(with: sentimentScore)
             
         } catch {
             print("There was an error with making a prediction, \(error)")
@@ -82,6 +83,23 @@ class ViewController: UIViewController {
         
     }
     
-
+    func updateUI(with sentimentScore: Int) {
+        
+        if sentimentScore > 20 {
+            self.emoji.text = "😍"
+        } else if sentimentScore > 10 {
+            self.emoji.text = "😀"
+        } else if sentimentScore > 0 {
+            self.emoji.text = "🙂"
+        } else if sentimentScore == 0 {
+            self.emoji.text = "😐"
+        } else if sentimentScore > -10 {
+            self.emoji.text = "😕"
+        } else if sentimentScore > -20 {
+            self.emoji.text = "😡"
+        } else {
+            self.emoji.text = "🤮"
+        }
+    }
 }
 
