@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBOutlet weak var emoji: UILabel!
+    
+   
+    @IBOutlet weak var prediction: UILabel!
+    @IBAction func enterField(_ sender: UITextField) {
+        
+    }
 }
 
